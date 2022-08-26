@@ -12,8 +12,8 @@ function generatePassword() {
   while (true) {
     if (length === null) {
       break
-    // } else if (length !== number) {
-    //   length = prompt("That is not a number. Please give a length between 8-128")
+    }  else if (isNaN(length)) {
+      length = prompt("That is not a number. Please give a length between 8-128")
     } else if (length <= 7) {
       length = prompt("That is too short. Please give a length between 8-128")
     } else if (length >= 128) {
@@ -103,7 +103,7 @@ function generatePassword() {
             break;
           } else if (num === false){
             alert("You need to select at least one element to include in your password.");
-            generatePassword();
+            break
           }
         }
       }
