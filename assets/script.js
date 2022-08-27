@@ -1,13 +1,16 @@
 // Assignment code here
 //
-// var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numChar = "0123456789";
-var specialChar = "!@#$%^&*()";
-var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowerChar = "abcdefghijklmnopqrstuvwxyz";
-var totalChars = "";
-
+// function to generate password 
 function generatePassword() {
+  // character choices 
+  var numChar = "0123456789";
+  var specialChar = "!@#$%^&*()";
+  var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowerChar = "abcdefghijklmnopqrstuvwxyz";
+  // total character 
+  var totalChars = "";
+
+  // length prompt and issue answers 
   var length = prompt("how long do you want your password? (8-128)")
   while (true) {
     if (length === null) {
@@ -23,7 +26,7 @@ function generatePassword() {
     }
   };
 
-// if you cancel out of the prompt, you dont want these to continue. Make a if statment for that
+  // loop for confirm windows and adding the characters if they're true 
   while (length !== null) {
     var upper = confirm("Do you want uppercase characters?");
     var lower = confirm("Do you want lowercase characters?");
@@ -109,7 +112,7 @@ function generatePassword() {
       }
     }
   }
-
+  // Main random password generator 
   var password = "";
   for (i = 0; i < length; i++) {
     password += totalChars.charAt(Math.floor(Math.random() * totalChars.length));
